@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voturi Prezidențiale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    .candidate {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: white;
+      display: inline-block;
+      width: 300px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Voturi Prezidențiale</h1>
+
+  <div class="candidate">
+    <img src="https://imgur.com/YYhW2GI" alt="Elena Lasconi">
+    <p>Elena Lasconi</p>
+    <p>Voturi: <span id="voturi1">0</span></p>
+    <button onclick="vote(1)">Votează Elena Lasconi</button>
+  </div>
+
+  <div class="candidate">
+    <img src="https://imgur.com/XSPjsRZ" alt="Marcel Ciolacu">
+    <p>Marcel Ciolacu</p>
+    <p>Voturi: <span id="voturi2">0</span></p>
+    <button onclick="vote(2)">Votează Marcel Ciolacu</button>
+  </div>
+
+  <div class="candidate">
+    <img src="https://imgur.com/pwn0leU" alt="George Călinescu">
+    <p>George Călinescu</p>
+    <p>Voturi: <span id="voturi3">0</span></p>
+    <button onclick="vote(3)">Votează George Călinescu</button>
+  </div>
+
+  <script>
+    let voturi = [0, 0, 0];
+
+    function vote(candidat) {
+      voturi[candidat - 1]++;
+      document.getElementById('voturi' + candidat).innerText = voturi[candidat - 1];
+    }
+  </script>
+</body>
+</html>
